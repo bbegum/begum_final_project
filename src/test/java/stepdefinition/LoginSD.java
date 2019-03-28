@@ -9,7 +9,7 @@ import framework.TestRunner;
 import org.testng.Assert;
 
 /**
- * Created by mohammadmuntakim on 6/9/17.
+ * Created by mohammadmuntakim.
  */
 public class LoginSD {
 
@@ -23,6 +23,7 @@ public class LoginSD {
 
     @When("^I enter (.+) into (username|password|firstname|lastname|mobile number|new password) text fields on home screen$")
     public void enterDataIntoTextFields(String anyText, String textFields) {
+
 
         switch (textFields) {
             case "username":
@@ -61,12 +62,7 @@ public class LoginSD {
 
     @Then("^I verify that i am an invalid login page$")
     public void verifyInvalidLoginPage() {
-        Assert.assertEquals(loginPage.getPageHeader(), "Log into Facebook");
-    }
-
-    @Then("^I see number [0-9] in text field$")
-    public void textField(int num) {
-
+        Assert.assertEquals(loginPage.getPageHeader(), "Log Into Facebook");
     }
 
     @Then("^I verify invalid signup error message$")

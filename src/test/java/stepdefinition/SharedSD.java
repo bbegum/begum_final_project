@@ -21,7 +21,7 @@ public class SharedSD {
 		driver = new ChromeDriver();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get(configReader.getUrl());
+		driver.get(configReader.getHotels_url());
 	}
 
 	@After
