@@ -17,11 +17,19 @@ public class DarkSkySD {
     DarkSkyLoginPage darkSkyLoginPage = new DarkSkyLoginPage();
     DarkSkyLogonPage darkSkyLogonPage = new DarkSkyLogonPage();
     DarkSkyAccountPage darkSkyAccountPage = new DarkSkyAccountPage();
+    DarkSkyRegisterPage darkSkyRegisterPage = new DarkSkyRegisterPage();
 
 
     @Given("^I am on Dark Sky Home Page$")
     public void verifyDarkSkyHomePage() {
         Assert.assertEquals(SharedSD.getDriver().getTitle(), "Dark Sky - 260 Broadway, New York City, NY", "This is the Wrong website");
+    }
+
+    @Given("^I am on the darksky Register page$")
+    public void accessRegisterPage(){
+        darkSkyHomePage.clickAPIButton();
+        darkSkyLogonPage.clickSignup();
+
     }
 
     @And("^I scroll to Time Machine Button$")
@@ -64,6 +72,18 @@ public class DarkSkySD {
     public void expandTodaysTimeline() throws InterruptedException {
         darkSkyHomePage.scrolltoToday();
         Thread.sleep(2000);
+    }
+
+    @When("^I click on Register button$")
+    public void clickRegisterButton() throws InterruptedException {
+        darkSkyRegisterPage.clickRegisterButton();
+        Thread.sleep(2000);
+    }
+
+    @Then("^I verify error message (.+)$")
+    public void verifyErrorMessage(String text){
+        Assert.assertEquals(darkSkyRegisterPage.geterrorMessage(), text);
+
     }
 
     @Then("^I verify lowest and highest temp is displayed correctly$")

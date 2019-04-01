@@ -79,21 +79,8 @@ public class DarkSkyAccountSD {
 
     }
 
-    @Then("^I verify (.+) error message$")
-    public void verifyDeclinedCard(String errorType){
-        switch(errorType){
-            case "carddeclined":
-                Assert.assertEquals(darkSkyAccountPage.getIncorrectMessage(),"Your card was declined. Your request was in live mode, but used a known test card.");
-                break;
-            case "invalidcardnumber":
-                Assert.assertEquals(darkSkyAccountPage.getIncorrectMessage(), "Your card number is incorrect.");
-                break;
-            case "invalidmonth":
-                Assert.assertEquals(darkSkyAccountPage.getIncorrectMessage(), "Your card's expiration month is invalid.");
 
 
-        }
-    }
 
 
 }

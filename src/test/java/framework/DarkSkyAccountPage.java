@@ -23,9 +23,6 @@ public class DarkSkyAccountPage extends BasePage {
     private By zipcodeField = By.xpath("//input[@data-stripe='address_zip'");
     private By countryField = By.xpath("//input[@data-stripe='address_country']");
     private By submitButton = By.xpath("//button[contains(text(),'Add Card')]");
-    // private WebElement cardHolderName = SharedSD.getDriver().findElement(By.xpath("//input[@placeholder='4242 4242 4242 4242']"));
-    private String incorrectMessage = SharedSD.getDriver().findElement(By.xpath("//div[@class='error']")).getText();
-
     public void scrolltocardinfo(){
         scrollToView(cardNumber);
     }
@@ -83,9 +80,6 @@ public class DarkSkyAccountPage extends BasePage {
         clickOn(submitButton);
     }
 
-    public String getIncorrectMessage() {
-        return incorrectMessage;
-    }
 
 
 }

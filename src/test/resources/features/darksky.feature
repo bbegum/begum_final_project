@@ -20,13 +20,12 @@ Feature: Dark Sky Test
   Scenario: Verify Current Temperature should not be greater or less than the Temperature from Daily Timeline
     Then I verify current temp is not greater or less then temps from daily timeline
 
+  @DarkSkyTest4
+  Scenario: Verify invalid signup error message
+    Given I am on the darksky Register page
+    When I click on Register button
+    Then I verify error message Please fill out this field.
 
-  @DarkSkyTest
-  Scenario: Verify click
-    And I scroll to Time Machine Button
-    And I click on Time Machine Button
-    And I click on Today's Date
-    Then I verify Weather Date
 
   @DarkSkyTest5
   Scenario: click API button
@@ -37,3 +36,9 @@ Feature: Dark Sky Test
     And I scroll down to card information section
 
 
+  @DarkSkyTest
+  Scenario: Verify click
+    And I scroll to Time Machine Button
+    And I click on Time Machine Button
+    And I click on Today's Date
+    Then I verify Weather Date

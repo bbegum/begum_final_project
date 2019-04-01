@@ -6,7 +6,7 @@ public class HotelsHomePage extends BasePage {
 
     private By packagesFlightsButton = By.xpath("//a[contains(text(),'Packages & Flights')]");
 
-    public void clickPackagesandFlights(){
+    public void clickPackagesAndFlights(){
         clickOn(packagesFlightsButton);
     }
 }

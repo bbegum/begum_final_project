@@ -180,5 +180,27 @@ public class BasePage {
 		WebDriverWait wait = new WebDriverWait(SharedSD.getDriver(), 15);
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
+
+	public  boolean areSame(int array[]) {
+		int temp = array[0];
+		for (int i = 1; i < array.length; i++)
+			if (array[i] != temp)
+				return false;
+		return true;
+	}
+
+	public boolean withinAmount(int amount, double[] array) {
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] > amount)
+				return false;
+
+		}
+		return true;
+	}
+
+	public String getAttribute(By locator, String text){
+	  String attribute =  webAction(locator).getAttribute(text);
+	    return attribute;
+    }
 }
 
